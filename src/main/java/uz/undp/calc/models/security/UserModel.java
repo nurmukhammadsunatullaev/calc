@@ -1,0 +1,19 @@
+package uz.undp.calc.models.security;
+
+import lombok.Data;
+import uz.undp.calc.entities.security.RoleEntity;
+import uz.undp.calc.entities.security.UserEntity;
+
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Data
+public class UserModel {
+   private String username;
+   private Set<String> authorities;
+
+   public UserModel(UserEntity userEntity){
+      this.username=userEntity.getUsername();
+      this.authorities=userEntity.getAuthorities().stream().map(RoleEntity::getAuthority).collect(Collectors.toSet());
+   }
+}
