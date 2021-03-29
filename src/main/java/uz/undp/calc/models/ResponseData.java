@@ -1,14 +1,9 @@
 package uz.undp.calc.models;
 
-import lombok.*;
+
 
 import java.time.Instant;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public class ResponseData<T> {
 
     private T data;
@@ -30,5 +25,40 @@ public class ResponseData<T> {
     public ResponseData(String errorMessage, Integer status) {
         this.errorMessage = errorMessage;
         this.status = status;
+    }
+
+    public ResponseData() {
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }

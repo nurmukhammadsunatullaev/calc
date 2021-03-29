@@ -1,6 +1,5 @@
 package uz.undp.calc.entities.content;
 
-import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Data
 public class ConstantEntity {
 
     @Id
@@ -17,5 +15,27 @@ public class ConstantEntity {
     private String constantName;
     private Double constantValue;
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getConstantName() {
+        return constantName;
+    }
+
+    public void setConstantName(String constantName) {
+        this.constantName = constantName;
+    }
+
+    public Double getConstantValue() {
+        return constantValue;
+    }
+
+    public void setConstantValue(Double constantValue) {
+        this.constantValue = constantValue;
+    }
 }

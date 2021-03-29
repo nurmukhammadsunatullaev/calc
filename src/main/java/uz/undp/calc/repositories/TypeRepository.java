@@ -6,5 +6,4 @@ import uz.undp.calc.entities.content.TypeEntity;
 
 @Repository
 public interface TypeRepository extends CrudRepository<TypeEntity, Integer> {
-
 }

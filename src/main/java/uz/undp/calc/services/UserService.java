@@ -1,6 +1,6 @@
 package uz.undp.calc.services;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Slf4j
+
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
@@ -34,7 +34,6 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("User with username: " + username + " not found");
         }
 
-        log.info("IN loadUserByUsername - user with username: {} successfully loaded", username);
         return user.get();
     }
 

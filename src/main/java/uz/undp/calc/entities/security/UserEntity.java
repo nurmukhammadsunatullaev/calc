@@ -1,12 +1,12 @@
 package uz.undp.calc.entities.security;
 
-import lombok.Data;
+
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+
 @Entity
 @Table(name = "tb_user")
 public class UserEntity implements UserDetails {
@@ -38,6 +38,58 @@ public class UserEntity implements UserDetails {
         this.fullName = fullName;
         this.username = username;
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public Set<RoleEntity> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<RoleEntity> authorities) {
+        this.authorities = authorities;
     }
 
     @Override

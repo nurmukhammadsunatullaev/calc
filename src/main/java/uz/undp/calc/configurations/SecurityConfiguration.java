@@ -17,7 +17,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final String ADMIN_ENDPOINT = "/rest/admin/**";
     private static final String USER_ENDPOINT = "/rest/user/**";
-    private static final String LOGIN_ENDPOINT="/rest/info/**";
+    private static final String []LOGIN_ENDPOINT={
+            "/*",
+            "/rest/info/**",
+            "/node_modules/**",
+            "/assets/**",
+    };
 
     @Autowired
     public SecurityConfiguration(JwtTokenProvider jwtTokenProvider) {

@@ -1,12 +1,12 @@
 package uz.undp.calc.entities.security;
 
-import lombok.Data;
+
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+
 @Entity
 @Table(name = "tb_role")
 public class RoleEntity  implements GrantedAuthority {
@@ -29,4 +29,28 @@ public class RoleEntity  implements GrantedAuthority {
     }
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    public List<UserEntity> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<UserEntity> users) {
+        this.users = users;
+    }
 }
